@@ -58,5 +58,5 @@ jobs:
         with:
           app-name: 'fatale-fm'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_3E1830D85F68417C8FF847639680A561 }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_CD21571098E2420DAF5687AEC33D453B }}
           package: .
