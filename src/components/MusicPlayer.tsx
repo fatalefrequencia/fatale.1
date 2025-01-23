@@ -1,6 +1,6 @@
 import { useRef, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { MoreHorizontal, Play, SkipBack, SkipForward } from 'lucide-react'
+import { MoreHorizontal, Play, Pause, SkipBack, SkipForward } from 'lucide-react'
 import { Button } from './ui/button'
 import { Slider } from './ui/slider'
 
@@ -68,7 +68,7 @@ export function MusicPlayer() {
             disabled={error}
           >
             {isPlaying ? (
-              <span className="w-3 h-3 md:w-4 md:h-4 border-l-2 border-r-2 border-white" />
+              <Pause className="h-3 w-3 md:h-4 md:w-4" />
             ) : (
               <Play className="h-3 w-3 md:h-4 md:w-4" />
             )}
