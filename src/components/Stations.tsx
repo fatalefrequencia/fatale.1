@@ -1,6 +1,4 @@
-import React from 'react';
 import { Radio } from 'lucide-react';
-
 interface Station {
   name: string;
   link: string;

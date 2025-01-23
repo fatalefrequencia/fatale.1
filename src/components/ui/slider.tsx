@@ -2,9 +2,9 @@ import * as React from "react"
 import { cn } from "@/lib/utils"
 
 export interface SliderProps
-  extends React.InputHTMLAttributes<HTMLInputElement> {
-  value?: number[]
-  onValueChange?: (value: number[]) => void
+  extends Omit<React.InputHTMLAttributes<HTMLInputElement>, 'value' | 'onChange'> {
+  value?: number[] // Custom value for the slider
+  onValueChange?: (value: number[]) => void // Custom change handler
 }
 
 const Slider = React.forwardRef<HTMLInputElement, SliderProps>(
@@ -30,6 +30,7 @@ const Slider = React.forwardRef<HTMLInputElement, SliderProps>(
     )
   }
 )
+
 Slider.displayName = "Slider"
 
 export { Slider }

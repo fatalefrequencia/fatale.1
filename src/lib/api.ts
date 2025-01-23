@@ -1,5 +1,3 @@
-import { endpoints } from '@/config/api'
-
 interface RequestOptions extends RequestInit {
   requiresAuth?: boolean
 }
