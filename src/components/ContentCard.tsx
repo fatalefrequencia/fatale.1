@@ -9,6 +9,10 @@ export function RadioPreview() {
   const navigate = useNavigate()
   const [isPlaying, setIsPlaying] = useState(false)
 
+  const handlePlayPause = () => {
+    setIsPlaying(!isPlaying)  // Toggle play/pause state
+  }
+
   return (
     <div className="space-y-4">
       {/* Radio Preview Card */}
@@ -22,11 +26,25 @@ export function RadioPreview() {
             <p className="text-red-300 mb-2">welcome home....</p>
             <p className="text-sm text-red-700 mb-4">3.2K listening</p>
             <Button 
-              size="lg" 
+              size="sm"  // Changed from "lg" to "sm"
               className="w-full bg-red-500 hover:bg-red-600"
               onClick={() => navigate('/radio')}
             >
               <Play className="h-4 w-4 md:h-5 md:w-5 mr-2" /> Listen Now
+            </Button>
+
+            {/* Play/Pause Button */}
+            <Button 
+              size="sm"  // Changed from "lg" to "sm"
+              className="w-full bg-red-500 hover:bg-red-600 mt-4"
+              onClick={handlePlayPause}
+            >
+              {isPlaying ? (
+                <Pause className="h-4 w-4 mr-2" />
+              ) : (
+                <Play className="h-4 w-4 mr-2" />
+              )}
+              {isPlaying ? "Pause" : "Play"}
             </Button>
           </div>
         </CardContent>
@@ -55,4 +73,3 @@ export function RadioPreview() {
     </div>
   )
 }
-

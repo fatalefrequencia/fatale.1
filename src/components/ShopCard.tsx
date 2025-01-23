@@ -1,4 +1,3 @@
-import React from 'react'
 import { Heart } from 'lucide-react'
 import { Button } from './ui/button'
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from './ui/card'
