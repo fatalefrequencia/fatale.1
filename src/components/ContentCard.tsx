@@ -1,10 +1,8 @@
 import { useState } from 'react'
 import { Card, CardContent } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
-import { Heart, Share2, Play, Pause, Volume2, Gift, FileText, Music2 } from 'lucide-react'
+import { Heart, Share2, Music2 } from 'lucide-react' // Removed unused imports
 import { CommentSection } from './CommentSection'
-import { LiveActivity } from '@/components/LiveActivity'
-import { TokenGift } from '@/components/TokenGift'
 
 interface Comment {
   id: string
@@ -32,7 +30,6 @@ interface ContentCardProps {
 export function ContentCard({ item, accentColor }: ContentCardProps) {
   const [isHovered, setIsHovered] = useState(false)
   const [liked, setIsLiked] = useState(false)
-  const [showTokens, setShowTokens] = useState(false)
   const [comments, setComments] = useState<Comment[]>([
     {
       id: '1',
@@ -56,7 +53,12 @@ export function ContentCard({ item, accentColor }: ContentCardProps) {
   }
 
   const handleGift = (type: string) => {
-    // Handle gift logic
+    // Handle gift logic (optional functionality you can implement later)
+  }
+
+  // Logic for showing token gifts, if necessary
+  const toggleTokens = () => {
+    setShowTokens(!showTokens)
   }
 
   return (
