@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { Card, CardContent } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
-import { Heart, Share2, Music2 } from 'lucide-react' // Removed unused imports
+import { Heart, Share2, Music2, FileText } from 'lucide-react' // Added the missing FileText import
 import { CommentSection } from './CommentSection'
 
 interface Comment {
@@ -54,11 +54,6 @@ export function ContentCard({ item, accentColor }: ContentCardProps) {
 
   const handleGift = (type: string) => {
     // Handle gift logic (optional functionality you can implement later)
-  }
-
-  // Logic for showing token gifts, if necessary
-  const toggleTokens = () => {
-    setShowTokens(!showTokens)
   }
 
   return (
@@ -122,25 +117,4 @@ export function ContentCard({ item, accentColor }: ContentCardProps) {
               }`}
               onClick={() => setIsLiked(!liked)}
             >
-              <Heart 
-                className={`h-4 w-4 mr-2 ${liked ? 'fill-current' : ''}`} 
-                style={{ color: liked ? 'rgb(239, 68, 68)' : accentColor }} 
-              />
-              {item.likes + (liked ? 1 : 0)}
-            </Button>
-          </div>
-          <Button variant="ghost" size="sm" className="rounded-full hover:bg-black/50">
-            <Share2 className="h-4 w-4" style={{ color: accentColor }} />
-          </Button>
-        </div>
-
-        <CommentSection
-          comments={comments}
-          accentColor={accentColor}
-          onComment={handleNewComment}
-          onGift={handleGift}
-        />
-      </CardContent>
-    </Card>
-  )
-}
+   

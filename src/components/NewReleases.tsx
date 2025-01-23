@@ -1,5 +1,3 @@
-import React from 'react';
-
 interface Album {
   name: string;
   artist: string;

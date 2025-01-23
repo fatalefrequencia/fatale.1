@@ -31,7 +31,7 @@ export function ProfileHeader({ accentColor, avatar, onSettingsClick, onEditClic
     <div className="relative px-4 py-8 md:py-12 backdrop-blur-sm bg-black/40 rounded-b-3xl">
       <div className="max-w-4xl mx-auto">
         <div className="flex flex-col md:flex-row items-center md:items-start gap-6 md:gap-8">
-          <Avatar className="w-24 h-24 md:w-32 md:h-32 ring-2 ring-offset-2 ring-offset-black/50" style={{ ringColor: accentColor }}>
+          <Avatar className="w-24 h-24 md:w-32 md:h-32 ring-2 ring-offset-2 ring-offset-black/50">
             <AvatarImage src={avatar} />
             <AvatarFallback>AB</AvatarFallback>
           </Avatar>
@@ -68,6 +68,7 @@ export function ProfileHeader({ accentColor, avatar, onSettingsClick, onEditClic
                 onClick={handleContact}
                 className="bg-black/50 hover:bg-black/70 backdrop-blur-sm flex items-center gap-2"
                 style={{ color: accentColor }}
+                aria-label="Contact Dark Artist"
               >
                 <Mail className="h-4 w-4" />
                 Contact
@@ -78,6 +79,7 @@ export function ProfileHeader({ accentColor, avatar, onSettingsClick, onEditClic
                 onClick={handleLink}
                 className="bg-black/50 hover:bg-black/70 backdrop-blur-sm flex items-center gap-2"
                 style={{ color: accentColor }}
+                aria-label="Visit Dark Artist's Website"
               >
                 <Link2 className="h-4 w-4" />
                 Links
@@ -103,6 +105,7 @@ export function ProfileHeader({ accentColor, avatar, onSettingsClick, onEditClic
               size="icon"
               className="bg-black/50 hover:bg-black/70 backdrop-blur-sm"
               onClick={() => navigate('/profile/dashboard')}
+              aria-label="Go to Dashboard"
             >
               <LayoutDashboard className="h-4 w-4" style={{ color: accentColor }} />
             </Button>
@@ -111,6 +114,7 @@ export function ProfileHeader({ accentColor, avatar, onSettingsClick, onEditClic
               size="icon"
               className="bg-black/50 hover:bg-black/70 backdrop-blur-sm"
               onClick={onSettingsClick}
+              aria-label="Open Settings"
             >
               <Settings className="h-4 w-4" style={{ color: accentColor }} />
             </Button>
@@ -119,6 +123,7 @@ export function ProfileHeader({ accentColor, avatar, onSettingsClick, onEditClic
               size="icon"
               className="bg-black/50 hover:bg-black/70 backdrop-blur-sm"
               onClick={onEditClick}
+              aria-label="Edit Profile"
             >
               <Edit className="h-4 w-4" style={{ color: accentColor }} />
             </Button>
