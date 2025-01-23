@@ -10,11 +10,12 @@ export function RadioPreview() {
   const [isPlaying, setIsPlaying] = useState(false)
 
   const handlePlayPause = () => {
-    setIsPlaying(prev => !prev)
+    setIsPlaying(prev => !prev)  // Toggle play/pause
   }
 
   return (
     <div className="space-y-4">
+      {/* Radio Preview Card */}
       <Card className="bg-red-950/20 border-red-900/20">
         <CardContent className="p-4">
           <div className="flex flex-col items-center text-center">
@@ -25,7 +26,7 @@ export function RadioPreview() {
             <p className="text-red-300 mb-2">welcome home....</p>
             <p className="text-sm text-red-700 mb-4">3.2K listening</p>
             <Button 
-              size="lg" 
+              size="default"  // Changed from "lg" to "default"
               className="w-full bg-red-500 hover:bg-red-600"
               onClick={() => navigate('/radio')}
             >
@@ -34,7 +35,7 @@ export function RadioPreview() {
 
             {/* Play/Pause Button */}
             <Button 
-              size="lg" 
+              size="default"  // Changed from "lg" to "default"
               className="w-full bg-red-500 hover:bg-red-600 mt-4"
               onClick={handlePlayPause}
               aria-label={isPlaying ? 'Pause Radio' : 'Play Radio'}
@@ -50,7 +51,7 @@ export function RadioPreview() {
         </CardContent>
       </Card>
 
-      {/* User Playlists */}
+      {/* User Playlists Card */}
       <Card className="bg-red-950/20 border-red-900/20">
         <CardContent className="p-4">
           <div className="flex items-center justify-between mb-4">
@@ -60,7 +61,7 @@ export function RadioPreview() {
             </div>
             <Button
               variant="ghost"
-              size="icon"
+              size="icon"  // Keeping "icon" for the playlist button
               className="h-8 w-8 hover:bg-red-500/20"
               onClick={() => navigate('/playlists')}
               aria-label="Go to Playlists"
